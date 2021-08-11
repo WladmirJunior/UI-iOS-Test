@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		E4A80C2026C3FCAE00B7F20D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A80C1F26C3FCAE00B7F20D /* AppDelegate.swift */; };
 		E4A80C2226C3FCAE00B7F20D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A80C2126C3FCAE00B7F20D /* SceneDelegate.swift */; };
-		E4A80C2426C3FCAE00B7F20D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A80C2326C3FCAE00B7F20D /* ViewController.swift */; };
-		E4A80C2726C3FCAE00B7F20D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4A80C2526C3FCAE00B7F20D /* Main.storyboard */; };
+		E4A80C2426C3FCAE00B7F20D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A80C2326C3FCAE00B7F20D /* StartViewController.swift */; };
 		E4A80C2926C3FCB100B7F20D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4A80C2826C3FCB100B7F20D /* Assets.xcassets */; };
 		E4A80C2C26C3FCB100B7F20D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4A80C2A26C3FCB100B7F20D /* LaunchScreen.storyboard */; };
+		E4A80C3B26C4078100B7F20D /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A80C3A26C4078100B7F20D /* UIViewExtensions.swift */; };
+		E4A80C3E26C4084300B7F20D /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A80C3D26C4084300B7F20D /* UIImageExtensions.swift */; };
+		E4A80C4326C40ECE00B7F20D /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A80C4226C40ECE00B7F20D /* MainCoordinator.swift */; };
+		E4A80C4626C40FDF00B7F20D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A80C4526C40FDE00B7F20D /* MainViewController.swift */; };
+		E4A80C4B26C4196000B7F20D /* AutoSizingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A80C4A26C4196000B7F20D /* AutoSizingTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E4A80C1C26C3FCAE00B7F20D /* InterMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4A80C1F26C3FCAE00B7F20D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4A80C2126C3FCAE00B7F20D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E4A80C2326C3FCAE00B7F20D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E4A80C2626C3FCAE00B7F20D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E4A80C2326C3FCAE00B7F20D /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		E4A80C2826C3FCB100B7F20D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4A80C2B26C3FCB100B7F20D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4A80C2D26C3FCB100B7F20D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4A80C3A26C4078100B7F20D /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		E4A80C3D26C4084300B7F20D /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		E4A80C4226C40ECE00B7F20D /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		E4A80C4526C40FDE00B7F20D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E4A80C4A26C4196000B7F20D /* AutoSizingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoSizingTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,67 @@
 		E4A80C1E26C3FCAE00B7F20D /* InterMovies */ = {
 			isa = PBXGroup;
 			children = (
+				E4A80C4826C4193600B7F20D /* View */,
+				E4A80C4026C4088000B7F20D /* Resource */,
+				E4A80C3926C4076400B7F20D /* Extension */,
+				E4A80C3626C4055300B7F20D /* SupportingFiles */,
+				E4A80C3526C4054B00B7F20D /* Controller */,
 				E4A80C1F26C3FCAE00B7F20D /* AppDelegate.swift */,
 				E4A80C2126C3FCAE00B7F20D /* SceneDelegate.swift */,
-				E4A80C2326C3FCAE00B7F20D /* ViewController.swift */,
-				E4A80C2526C3FCAE00B7F20D /* Main.storyboard */,
-				E4A80C2826C3FCB100B7F20D /* Assets.xcassets */,
+				E4A80C4226C40ECE00B7F20D /* MainCoordinator.swift */,
+			);
+			path = InterMovies;
+			sourceTree = "<group>";
+		};
+		E4A80C3526C4054B00B7F20D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E4A80C2326C3FCAE00B7F20D /* StartViewController.swift */,
+				E4A80C4526C40FDE00B7F20D /* MainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E4A80C3626C4055300B7F20D /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
 				E4A80C2A26C3FCB100B7F20D /* LaunchScreen.storyboard */,
 				E4A80C2D26C3FCB100B7F20D /* Info.plist */,
 			);
-			path = InterMovies;
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		E4A80C3926C4076400B7F20D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E4A80C3A26C4078100B7F20D /* UIViewExtensions.swift */,
+				E4A80C3D26C4084300B7F20D /* UIImageExtensions.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		E4A80C4026C4088000B7F20D /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				E4A80C2826C3FCB100B7F20D /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		E4A80C4826C4193600B7F20D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E4A80C4926C4193900B7F20D /* Component */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E4A80C4926C4193900B7F20D /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				E4A80C4A26C4196000B7F20D /* AutoSizingTableView.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +186,6 @@
 			files = (
 				E4A80C2C26C3FCB100B7F20D /* LaunchScreen.storyboard in Resources */,
 				E4A80C2926C3FCB100B7F20D /* Assets.xcassets in Resources */,
-				E4A80C2726C3FCAE00B7F20D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +196,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4A80C2426C3FCAE00B7F20D /* ViewController.swift in Sources */,
+				E4A80C4626C40FDF00B7F20D /* MainViewController.swift in Sources */,
+				E4A80C2426C3FCAE00B7F20D /* StartViewController.swift in Sources */,
+				E4A80C4326C40ECE00B7F20D /* MainCoordinator.swift in Sources */,
 				E4A80C2026C3FCAE00B7F20D /* AppDelegate.swift in Sources */,
+				E4A80C4B26C4196000B7F20D /* AutoSizingTableView.swift in Sources */,
+				E4A80C3E26C4084300B7F20D /* UIImageExtensions.swift in Sources */,
+				E4A80C3B26C4078100B7F20D /* UIViewExtensions.swift in Sources */,
 				E4A80C2226C3FCAE00B7F20D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,14 +210,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E4A80C2526C3FCAE00B7F20D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E4A80C2626C3FCAE00B7F20D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E4A80C2A26C3FCB100B7F20D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -287,7 +343,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = InterMovies/Info.plist;
+				INFOPLIST_FILE = InterMovies/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,7 +361,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = InterMovies/Info.plist;
+				INFOPLIST_FILE = InterMovies/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
