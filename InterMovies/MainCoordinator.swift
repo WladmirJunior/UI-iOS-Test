@@ -16,8 +16,16 @@ public class MainCoordinator {
 extension MainCoordinator: StartViewControllerDelegate {
     func goToMainScreen(_ startViewController: StartViewController) {
         let mainViewController = MainViewController()
+        mainViewController.delegate = self
         mainNavigation = UINavigationController(rootViewController: mainViewController)
         mainNavigation.modalPresentationStyle = .fullScreen
         startViewController.present(mainNavigation, animated: true)
+    }
+}
+
+extension MainCoordinator: MainViewControllerDelegate {
+    func goToMovieDetailScreen(_ mainViewController: MainViewController, movieId: Int) {
+        let detailViewController = MovieDetailViewController(movieId: movieId)
+        mainNavigation.pushViewController(detailViewController, animated: true)
     }
 }

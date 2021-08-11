@@ -23,6 +23,6 @@ public class AutoSizingTableView: UITableView {
     override public var intrinsicContentSize: CGSize {
         setNeedsLayout()
 
-        return CGSize(width: contentSize.width, height: contentSize.height)
+        return CGSize(width: contentSize.width, height: contentSize.height + contentInset.top + contentInset.bottom)
     }
 }
