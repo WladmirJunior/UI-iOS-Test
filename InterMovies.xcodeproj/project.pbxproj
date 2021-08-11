@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3759AAC826C45C12004A510E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3759AAC726C45C12004A510E /* Kingfisher */; };
+		3759AACC26C45C5A004A510E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3759AACB26C45C5A004A510E /* RxSwift */; };
+		3759AACE26C45C5A004A510E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 3759AACD26C45C5A004A510E /* RxCocoa */; };
 		375B395726C41D3600CCCBE6 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375B395626C41D3600CCCBE6 /* RequestProtocol.swift */; };
 		375B395B26C41DE100CCCBE6 /* APIClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375B395A26C41DE100CCCBE6 /* APIClientProtocol.swift */; };
-		375B396026C4419300CCCBE6 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 375B395F26C4419300CCCBE6 /* RxSwift */; };
-		375B396226C4419300CCCBE6 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 375B396126C4419300CCCBE6 /* RxCocoa */; };
 		375B396626C443D500CCCBE6 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375B396526C443D500CCCBE6 /* APIClient.swift */; };
 		375B396B26C44EB100CCCBE6 /* InterMoviesServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375B396A26C44EB100CCCBE6 /* InterMoviesServices.swift */; };
 		375B397B26C4559400CCCBE6 /* GetPopularMoviesUseCaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375B397826C4559300CCCBE6 /* GetPopularMoviesUseCaseResponse.swift */; };
@@ -29,7 +30,6 @@
 		E4A80C4E26C41B6F00B7F20D /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A80C4D26C41B6F00B7F20D /* MovieDetailViewController.swift */; };
 		E4A80C5226C41CD500B7F20D /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A80C5126C41CD500B7F20D /* Movie.swift */; };
 		E4A80C5626C4482C00B7F20D /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A80C5526C4482C00B7F20D /* MovieDetail.swift */; };
-		E4A80C5B26C4542E00B7F20D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E4A80C5A26C4542E00B7F20D /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,9 +62,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				375B396226C4419300CCCBE6 /* RxCocoa in Frameworks */,
-				375B396026C4419300CCCBE6 /* RxSwift in Frameworks */,
-				E4A80C5B26C4542E00B7F20D /* Kingfisher in Frameworks */,
+				3759AACE26C45C5A004A510E /* RxCocoa in Frameworks */,
+				3759AACC26C45C5A004A510E /* RxSwift in Frameworks */,
+				3759AAC826C45C12004A510E /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,9 +244,9 @@
 			);
 			name = InterMovies;
 			packageProductDependencies = (
-				375B395F26C4419300CCCBE6 /* RxSwift */,
-				375B396126C4419300CCCBE6 /* RxCocoa */,
-				E4A80C5A26C4542E00B7F20D /* Kingfisher */,
+				3759AAC726C45C12004A510E /* Kingfisher */,
+				3759AACB26C45C5A004A510E /* RxSwift */,
+				3759AACD26C45C5A004A510E /* RxCocoa */,
 			);
 			productName = InterMovies;
 			productReference = E4A80C1C26C3FCAE00B7F20D /* InterMovies.app */;
@@ -276,8 +276,8 @@
 			);
 			mainGroup = E4A80C1326C3FCAE00B7F20D;
 			packageReferences = (
-				375B395E26C4419300CCCBE6 /* XCRemoteSwiftPackageReference "RxSwift" */,
-				E4A80C5926C4542E00B7F20D /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				3759AAC626C45C12004A510E /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				3759AACA26C45C5A004A510E /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = E4A80C1D26C3FCAE00B7F20D /* Products */;
 			projectDirPath = "";
@@ -521,36 +521,39 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		375B395E26C4419300CCCBE6 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+		3759AAC626C45C12004A510E /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.2.0;
-		E4A80C5926C4542E00B7F20D /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 6.3.1;
 			};
 		};
+		3759AACA26C45C5A004A510E /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		375B395F26C4419300CCCBE6 /* RxSwift */ = {
+		3759AAC726C45C12004A510E /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 375B395E26C4419300CCCBE6 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = 3759AAC626C45C12004A510E /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		3759AACB26C45C5A004A510E /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3759AACA26C45C5A004A510E /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
 		};
-		375B396126C4419300CCCBE6 /* RxCocoa */ = {
+		3759AACD26C45C5A004A510E /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 375B395E26C4419300CCCBE6 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = 3759AACA26C45C5A004A510E /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
-		E4A80C5A26C4542E00B7F20D /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E4A80C5926C4542E00B7F20D /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
