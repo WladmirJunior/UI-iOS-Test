@@ -11,11 +11,18 @@ public class MainCoordinator {
     lazy var mainNavigation: UINavigationController = {
         return UINavigationController()
     }()
+    
+    lazy var serviceProtocol: APIClientProtocol = {
+        return APIClient()
+    }()
 }
 
 extension MainCoordinator: StartViewControllerDelegate {
     func goToMainScreen(_ startViewController: StartViewController) {
-        let mainViewController = MainViewController()
+        let getPopularMovieUseCase = GetPopularMoviesUseCase(service: serviceProtocol)
+        let viewModel = MainViewModel(getPopularUseCase: getPopularMovieUseCase)
+        let mainViewController = MainViewController(viewModel: viewModel)
+        viewModel.viewController = mainViewController
         mainViewController.delegate = self
         mainNavigation = UINavigationController(rootViewController: mainViewController)
         mainNavigation.modalPresentationStyle = .fullScreen

@@ -23,6 +23,7 @@ class APIClient: APIClientProtocol {
                 urlRequest.httpMethod = request.method.rawValue
                 urlRequest.httpBody = request.body
                 urlRequest.allHTTPHeaderFields = request.headers
+                debugPrint(urlRequest)
                 let session = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
                     do {
                         if let dataResponse = data {

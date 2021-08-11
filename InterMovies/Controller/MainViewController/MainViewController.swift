@@ -11,13 +11,29 @@ protocol MainViewControllerDelegate: AnyObject {
     func goToMovieDetailScreen(_ mainViewController: MainViewController, movieId: Int)
 }
 
+protocol MainViewControllerType: AnyObject {
+    func updateMovies(with movies: [Movie])
+}
+
 class MainViewController: UIViewController {
 
     enum Constants {
         static let tileBar = "Inter Movies"
         static let serachButtonTitle = "Pesquisar"
     }
-
+    
+    public var viewModel: MainViewModelType?
+    
+    public init(viewModel: MainViewModelType) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -48,21 +64,17 @@ class MainViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         return tableView
     }()
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        viewModel?.initState()
     }
 
     weak var delegate: MainViewControllerDelegate?
     let searchController = UISearchController(searchResultsController: nil)
-    var movies: [Movie] = [
-        Movie(title: "The Lord of the Rings The Two Towers", id: 1, image: nil, releaseDate: "", categories: []),
-        Movie(title: "Batman", id: 1, image: nil, releaseDate: "", categories: []),
-        Movie(title: "Superman", id: 1, image: nil, releaseDate: "", categories: []),
-        Movie(title: "Marvel", id: 1, image: nil, releaseDate: "", categories: []),
-        Movie(title: "Aquaman", id: 1, image: nil, releaseDate: "", categories: [])
-    ]
+    var movies: [Movie] = []
     var filteredMovies: [Movie] = []
     var isSearchBarEmpty: Bool {
         return searchController.searchBar.text?.isEmpty ?? true
@@ -117,6 +129,13 @@ class MainViewController: UIViewController {
         filteredMovies = movies.filter {
             $0.title.lowercased().contains(searchText.lowercased())
         }
+        tableView.reloadData()
+    }
+}
+
+extension MainViewController: MainViewControllerType {
+    func updateMovies(with movies: [Movie]) {
+        self.movies = movies
         tableView.reloadData()
     }
 }
