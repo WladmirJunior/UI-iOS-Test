@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MovieDetailViewController: UIViewController {
 
@@ -105,6 +106,7 @@ class MovieDetailViewController: UIViewController {
 
     private func setupUI() {
         view.backgroundColor = .white
+        updateView(with: MovieDetail(title: "teste"))
     }
 
     private func buildViewHierarchy() {
@@ -152,5 +154,6 @@ class MovieDetailViewController: UIViewController {
     // Call after get details
     private func updateView(with detail: MovieDetail) {
         titleLabel.text = detail.title
+        imageBanner.kf.setImage(with: URL(string: "https://upload.wikimedia.org/wikipedia/pt/3/38/Lord_of_the_Rings_Fellowship_of_the_Ring.jpg")!)
     }
 }
