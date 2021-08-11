@@ -71,7 +71,6 @@ class MainViewController: UIViewController {
         return searchController.isActive && !isSearchBarEmpty
     }
 
-
     // MARK: - UI
 
     private func setup() {
@@ -160,4 +159,3 @@ extension MainViewController: UISearchResultsUpdating {
         filterContentForSearchText(searchBar.text!)
     }
 }
-
