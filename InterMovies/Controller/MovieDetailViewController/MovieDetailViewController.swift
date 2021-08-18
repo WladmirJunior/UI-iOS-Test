@@ -8,10 +8,26 @@
 import UIKit
 import Kingfisher
 
+protocol MovieDetailViewControllerType: AnyObject {
+    func updateMovie(with movie: MovieDetail)
+}
+
 class MovieDetailViewController: UIViewController {
 
     enum Constants {
         static let watchButtonTitle = "Assistir"
+    }
+    
+    public var viewModel: MovieDetailViewModelType?
+    
+    public init(viewModel: MovieDetailViewModelType) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     private let scrollView: UIScrollView = {
@@ -32,7 +48,6 @@ class MovieDetailViewController: UIViewController {
         let imageView = UIImageView(frame: .zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
-        imageView.image = .banner
         return imageView
     }()
 
@@ -41,7 +56,6 @@ class MovieDetailViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 1
-        label.text = "The Lord of the Rings The Two Towers"
         return label
     }()
 
@@ -59,12 +73,6 @@ class MovieDetailViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
-        label.text = """
-        Após a captura de Merry e Pippy pelos orcs, a Sociedade do Anel é dissolvida.
-        Frodo e Sam seguem sua jornada rumo à Montanha da Perdição para destruir o anel e descobrem que estão sendo perseguidos
-        pelo misterioso Gollum. Enquanto isso, Aragorn, o elfo e arqueiro Legolas e o anão Gimli partem para resgatar
-        os hobbits sequestrados e chegam ao reino de Rohan, onde o rei Theoden foi vítima de uma maldição mortal de Saruman.
-        """
         return label
     }()
 
@@ -78,24 +86,8 @@ class MovieDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        viewModel?.initState()
     }
-
-    // MARK: - INITIALIZERS
-
-    public init(movieId: Int) {
-        super.init(nibName: nil, bundle: nil)
-        //viewModel.getDetails(with: movieId)
-    }
-
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
-
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
     // MARK: - UI
 
     private func setup() {
@@ -106,7 +98,7 @@ class MovieDetailViewController: UIViewController {
 
     private func setupUI() {
         view.backgroundColor = .white
-        updateView(with: MovieDetail(title: "teste"))
+        scrollView.contentInsetAdjustmentBehavior = .never
     }
 
     private func buildViewHierarchy() {
@@ -154,6 +146,13 @@ class MovieDetailViewController: UIViewController {
     // Call after get details
     private func updateView(with detail: MovieDetail) {
         titleLabel.text = detail.title
-        imageBanner.kf.setImage(with: URL(string: "https://upload.wikimedia.org/wikipedia/pt/3/38/Lord_of_the_Rings_Fellowship_of_the_Ring.jpg")!)
+        descriptionLabel.text = detail.description
+        imageBanner.kf.setImage(with: detail.posterImage)
+    }
+}
+
+extension MovieDetailViewController: MovieDetailViewControllerType {
+    func updateMovie(with movie: MovieDetail) {
+        updateView(with: movie)
     }
 }

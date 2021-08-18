@@ -31,8 +31,11 @@ extension MainCoordinator: StartViewControllerDelegate {
 }
 
 extension MainCoordinator: MainViewControllerDelegate {
-    func goToMovieDetailScreen(_ mainViewController: MainViewController, movieId: Int) {
-        let detailViewController = MovieDetailViewController(movieId: movieId)
+    func goToMovieDetailScreen(_ mainViewController: MainViewController, movie: Movie) {
+        let getDetailMovieUseCase = GetMovieDetailUseCase(service: serviceProtocol)
+        let viewModel = MovieDetailViewModel(movie: movie, getDetailMovieUseCase: getDetailMovieUseCase)
+        let detailViewController = MovieDetailViewController(viewModel: viewModel)
+        viewModel.viewController = detailViewController
         mainNavigation.pushViewController(detailViewController, animated: true)
     }
 }

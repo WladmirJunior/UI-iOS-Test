@@ -9,4 +9,7 @@ import Foundation
 
 struct MovieDetail {
     let title: String
+    let description: String?
+    let backgroundImage: URL?
+    let posterImage: URL?
 }
