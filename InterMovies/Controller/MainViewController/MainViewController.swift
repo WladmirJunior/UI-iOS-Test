@@ -8,7 +8,7 @@
 import UIKit
 
 protocol MainViewControllerDelegate: AnyObject {
-    func goToMovieDetailScreen(_ mainViewController: MainViewController, movieId: Int)
+    func goToMovieDetailScreen(_ mainViewController: MainViewController, movie: Movie)
 }
 
 protocol MainViewControllerType: AnyObject {
@@ -167,7 +167,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             movie = movies[indexPath.row]
         }
-        delegate?.goToMovieDetailScreen(self, movieId: movie.id)
+        delegate?.goToMovieDetailScreen(self, movie: movie)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

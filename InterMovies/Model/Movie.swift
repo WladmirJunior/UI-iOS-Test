@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct Movie {
-    let title: String
-    let id: Int
-    let image: URL?
-    let releaseDate: String
-    let categories: [String]
+public struct Movie {
+    public let title: String
+    public let id: Int
+    public let image: URL?
+    public let releaseDate: String
+    public let categories: [String]
 }
